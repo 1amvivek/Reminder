@@ -1,0 +1,107 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <!-- CSS reset -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'customize.css' %}">
+    <link rel="stylesheet" href="{% static 'shake.css' %}">
+    <link rel="stylesheet" href="{% static 'form_customizer.css' %}">
+    <link rel="stylesheet" href="{% static 'shake-card.css' %}">
+
+    <!-- Resource style -->
+    <script src="{% static 'js/modernizr.js' %} "></script>
+    <!-- Modernizr -->
+    <script src="{% static 'js/customize.js' %} "></script>
+
+    <title>Reminders | Notify</title>
+    <style>
+        .cd-editable-content {
+            background-image: url(' {% static 'img/tile.png' %}');
+        }
+
+        .modal-content {
+            background-image: url('{% static 'img/tile.png' %} ');
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <nav class="cd-stretchy-nav add-content">
+        <a class="cd-nav-trigger" href="#0"> Menu <span aria-hidden="true"></span> </a>
+
+        <ul>
+            <li>
+                <a href="{% url 'add_task' %}"><span>Add Task</span></a>
+            </li>
+            <li>
+                <a href="{% url 'task_add_list' %}"><span>Edit Card</span></a>
+            </li>
+            <li>
+                <a href="{% url 'task_add_list' %}"><span>Add Card</span></a>
+            </li>
+            <li>
+                <a href="#0" id="trash-card"><span>Trash</span></a>
+            </li>
+        </ul>
+
+        <span aria-hidden="true" class="stretchy-nav-bg"> </span>
+    </nav>
+    <nav class="cd-stretchy-nav">
+        <a class="cd-nav-trigger" href="#0"> Menu <span aria-hidden="true"></span> </a>
+
+        <ul>
+            <li>
+                <a href="{% url 'list' %}" class="active"><span>Home</span></a>
+            </li>
+            <li>
+                <a href="#0"><span>Portfolio</span></a>
+            </li>
+
+            <li>
+                <a href="{%  url 'feedback' %}"><span>Feedback</span></a>
+            </li>
+        </ul>
+
+        <span aria-hidden="true" class="stretchy-nav-bg"></span></nav>
+</header>
+
+<main class="cd-main-content">
+    <center>
+        <a href="{% url 'list' %}"><h2> Notify </h2> <span> A reminder app!</span></a>
+    </center>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<script src="{% static 'js/jquery-2.1.4.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script>
+    jQuery(document).ready(function () {
+        $("#trash").click(function () {
+            $(".dangle").toggleClass("shake-slow");
+            $(".dangle span").toggle();
+            $("#myBtn").toggleClass("not-active");
+        });
+        $("#trash-card").click(function () {
+            $(".cd-editable-content").toggleClass(" shake-slow-card");
+            $(".cd-editable-content span").toggle();
+        });
+
+    });
+    jQuery(document).ready(function () {
+
+    });
+</script>
+<!-- Resource jQuery -->
+</body>
+
+</html>

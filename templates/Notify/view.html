@@ -1,0 +1,60 @@
+{% extends 'Notify/home.html' %}
+
+{% block content %}
+    {% for taskList in taskLists %}
+        <div class="cd-editable-content" id="container">
+            <a href="{% url 'task_card_delete' pk=taskList.pk %}"> <span id="close">&nbsp;&nbsp;&times;&nbsp;&nbsp;</span> </a>
+            <nav class="cd-stretchy-nav edit-content">
+                <a class="cd-nav-trigger" href="#0"> Menu <span aria-hidden="true"></span> </a>
+
+                <ul>
+                    <li>
+                        <a href="{% url 'add_task' %} "><span>Add</span></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'add_task' %}"><span>Edit</span></a>
+                    </li>
+                    <li>
+                        <a href="#0" id="trash"><span>Trash</span></a>
+                    </li>
+                </ul>
+
+                <span aria-hidden="true" class="stretchy-nav-bg"> </span>
+            </nav>
+            <div>
+
+                <div class="content-inside" id="accordion">
+                    <h4> {{ taskList.name }} </h4>
+                    <ul class="live-data">
+                        {% for task in tasks %}
+                            {% ifnotequal taskList.name|stringformat:"s" task.TL|stringformat:"s" %}
+                            {% else %}
+                                <li class="dangle">
+                                    <a href="#myModal{{ task.id }}" id="myBtn">{{ task.summary }}</a>
+                                    <a href="{% url 'task_delete' pk=task.pk %}"> <span>&nbsp;&nbsp;&times;&nbsp;&nbsp;</span> </a>
+                                </li>
+                                <div id="myModal{{ task.id }}" class="modal">
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <a href="#close" title="Close" class="close">&times;</a>
+                                        <h4> {{ task.summary }} </h4>
+                                        <ul class="live-data">
+                                            <li>Description: {{ task.description }}</li>
+                                            <li>Created: {{ task.created }}</li>
+                                            <li>Reminder: {{ task.reminder }}</li>
+                                            <li>Reminding in <span style="color:red"> {{ task.get_time_diff }}</span></li>
+                                            <li>ID: {{ task.id }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            {% endifnotequal %}
+                            <div>
+                            </div>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+

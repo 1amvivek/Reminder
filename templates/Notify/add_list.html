@@ -1,0 +1,23 @@
+{% extends 'Notify/home.html' %}
+
+{% block content %}
+    <div class="container">
+    <h1>Task List</h1>
+    <form method="POST" id="contact"> {% csrf_token %}
+        <h3>Add Task</h3>
+        {% for field in form %}
+            <div class="fieldWrapper">
+            <fieldset>
+                {{ field.errors }}
+            </fieldset>
+                <fieldset>
+                    {{ field }}
+                </fieldset>
+            </div>
+        {% endfor %}
+        <fieldset>
+            <button name="submit"type="submit" id="contact-submit" data-submit="...Sending"> Add </button>
+        </fieldset>
+    </form>
+    </div>
+{% endblock %}

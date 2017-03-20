@@ -1,0 +1,52 @@
+.shake-slow-card {
+    display: inline-block;
+    transform-origin: center center;
+
+}
+
+.shake-freeze, .shake-constant.shake-constant--hover:hover, .shake-trigger:hover .shake-constant.shake-constant--hover {
+    animation-play-state: paused
+}
+
+.shake-freeze:hover, .shake-trigger:hover .shake-freeze, .shake-slow-card, .shake-trigger:hover .shake-slow-card {
+    animation-play-state: running
+}
+
+@keyframes shake-slow-card {
+    10% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    20% {
+        transform: translate(0px, 0px) rotate(1deg)
+    }
+    30% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    40% {
+        transform: translate(0px, 0px) rotate(-1deg)
+    }
+    50% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    60% {
+        transform: translate(0px, 0px) rotate(1deg)
+    }
+    70% {
+        transform: translate(0px, 0px) rotate(0deg)
+    }
+    80% {
+        transform: translate(0px, 0px) rotate(-1deg)
+    }
+    0%,
+    100% {
+        transform: translate(0px, 0px) rotate(1deg)
+    }
+
+}
+
+.shake-slow-card, .shake-trigger:hover .shake-slow-card, .shake-slow-card.shake-freeze, .shake-slow-card.shake-constant {
+    animation-name: shake-slow-card;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite
+}
