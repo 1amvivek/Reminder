@@ -49,8 +49,21 @@ def add_task(request):
             # print('post.reminder')
             # time = post.reminder
             # send_sms.apply_async(eta=post.reminder)
-            msg = 'You are being reminded of a task:' + post.summary +' at '+ str(post.reminder) + '--from Notify Team.'
-            send_sms(msg)
+            # # msg = 'You are being reminded of a task:' + post.summary +' at '+ str(post.reminder) + '--from Notify Team.'
+            # # send_sms(msg)
+            template = get_template('add_template.txt')
+            context = Context(
+                {'summary': post.summary, 'description': post.description, 'created': post.created, 'reminder': post.reminder, })
+            content = template.render(context)
+
+            email = EmailMessage(
+                "Reminder information",
+                content,
+                "viveklakshmanan@live.com" + '',
+                ['vivekthesmart@gmail.com'],
+                headers={'Reply-To': 'vivekthesmart@gmail.com'}
+            )
+            email.send()
             return redirect('../')
     else:
         form = AddTask()
@@ -96,17 +109,16 @@ def feedback(request):
 
 
 # @task(name="send_sms")
-
-
-def send_sms(msg):
-    account_sid = 'ACd540203503f84c32e8b046b2e372e691'
-    auth_token = '451951ff2fe8b6101e3f53838ca4207a'
-    my_cell = '+16692924707'
-    my_twilio = '+16692010306'
-    client = TwilioRestClient(account_sid, auth_token)
-
-    client.messages.create(
-        body=msg,
-        to=my_cell,
-        from_=my_twilio,
-        )
+# def send_sms(): #msg
+#     account_sid = 'ACd540203503f84c32e8b046b2e372e691'
+#     auth_token = '451951ff2fe8b6101e3f53838ca4207a'
+#     my_cell = '+16692924707'
+#     my_twilio = '+16692010306'
+#     msg = 'You have an reminder  --Notify Team'
+#     client = TwilioRestClient(account_sid, auth_token)
+#
+#     client.messages.create(
+#         body=msg,
+#         to=my_cell,
+#         from_=my_twilio,
+#         )

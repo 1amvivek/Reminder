@@ -1,0 +1,18 @@
+You have created a Task in Notify app.
+The details of the Task are as follows:
+
+
+Task Name:
+{{ summary }}
+
+Description:
+{{ description }}
+
+Created:
+{{ created }}
+
+Reminder:
+{{ reminder }}
+
+Thanks for creating a task,
+-- Notify Team

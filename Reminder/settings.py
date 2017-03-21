@@ -141,6 +141,7 @@ CELERY_TIMEZONE = 'America/Los_Angeles'
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 import dj_database_url
 DATABASES['default'] = dj_database_url.config()
