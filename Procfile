@@ -1,1 +1,1 @@
-web: gunicorn mysite.wsgi
+web: gunicorn Reminder.wsgi --log-file -
