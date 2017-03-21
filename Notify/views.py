@@ -46,9 +46,11 @@ def add_task(request):
         form = AddTask(request.POST)
         if form.is_valid():
             post = form.save(commit=True)
-            print('post.reminder')
-            time = post.reminder
-            send_sms.apply_async(eta=post.reminder)
+            # print('post.reminder')
+            # time = post.reminder
+            # send_sms.apply_async(eta=post.reminder)
+            msg = 'You are being reminded of a task:' + post.summary +' at '+ str(post.reminder) + '--from Notify Team.'
+            send_sms(msg)
             return redirect('../')
     else:
         form = AddTask()
@@ -93,13 +95,12 @@ def feedback(request):
 
 
 
-@task(name="send_sms")
-def send_sms():
+# @task(name="send_sms")
+def send_sms(msg):
     account_sid = 'ACd540203503f84c32e8b046b2e372e691'
     auth_token = '451951ff2fe8b6101e3f53838ca4207a'
     my_cell = '+16692924707'
     my_twilio = '+16692010306'
-    msg = 'You are being reminded of a task:  --from Notify Team.'
     client = TwilioRestClient(account_sid, auth_token)
 
     client.messages.create(

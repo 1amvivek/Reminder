@@ -15,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Notify/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="50" column="33" lean-forward="false" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+            <state relative-caret-position="215">
+              <caret line="51" column="96" lean-forward="false" selection-start-line="51" selection-start-column="96" selection-end-line="51" selection-end-column="96" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -30,8 +30,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Notify/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="38" />
+            <state relative-caret-position="150">
+              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -111,11 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Reminder/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="109" column="31" lean-forward="false" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
+            <state relative-caret-position="285">
+              <caret line="106" column="41" lean-forward="false" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -160,8 +160,8 @@
         <option value="$PROJECT_DIR$/templates/Notify/feedback.html" />
         <option value="$PROJECT_DIR$/Reminder/__init__.py" />
         <option value="$PROJECT_DIR$/Reminder/celery.py" />
-        <option value="$PROJECT_DIR$/Notify/views.py" />
         <option value="$PROJECT_DIR$/Reminder/settings.py" />
+        <option value="$PROJECT_DIR$/Notify/views.py" />
       </list>
     </option>
   </component>
@@ -895,24 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Notify/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="33" lean-forward="false" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Notify/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Notify/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -947,9 +929,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Reminder/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="109" column="31" lean-forward="false" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
+        <state relative-caret-position="285">
+          <caret line="106" column="41" lean-forward="false" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Notify/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Notify/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="51" column="96" lean-forward="false" selection-start-line="51" selection-start-column="96" selection-end-line="51" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
