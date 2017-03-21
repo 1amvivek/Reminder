@@ -96,6 +96,8 @@ def feedback(request):
 
 
 # @task(name="send_sms")
+
+
 def send_sms(msg):
     account_sid = 'ACd540203503f84c32e8b046b2e372e691'
     auth_token = '451951ff2fe8b6101e3f53838ca4207a'
