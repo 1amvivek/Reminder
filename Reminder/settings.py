@@ -103,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'vivekthesmart@gmail.com'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'vivekthesmart@gmail.com'
@@ -111,6 +111,7 @@ EMAIL_HOST_PASSWORD = 'dhoni143'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 
 
